@@ -1,0 +1,139 @@
+:root {
+  --dark-brown: #2D1E17;
+  --brown:      #523F31;
+  --light-brown:#796254;
+  --beige:      #9D8A7C;
+  --soft-beige: #C4B6AB;
+  --very-light: #EADDD3;
+}
+
+/* ===== Base ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--very-light);
+  color: var(--dark-brown);
+}
+
+header {
+  background: var(--brown);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 { margin: 0; font-size: 1.8rem; }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+nav a:hover { color: var(--soft-beige); }
+
+.content-box {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: var(--soft-beige);
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(45,30,23,.3);
+  border-radius: 10px;
+}
+
+h2 { color: var(--brown); margin-top: 0; }
+
+button {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  padding: .8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .3s, transform .2s;
+}
+
+button:hover { background: var(--light-brown); transform: scale(1.05); }
+
+footer {
+  text-align: center;
+  background: var(--brown);
+  padding: 1rem;
+  color: #fff;
+}
+
+/* ===== Carrusel ===== */
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform .6s ease;
+}
+
+.slide { min-width: 100%; box-sizing: border-box; }
+
+/* Flechas */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: .8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: .3s;
+}
+
+.carousel-btn:hover { opacity: 1; background: var(--light-brown); }
+.prev { left: -20px; }
+.next { right: -20px; }
+
+/* Puntos */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  margin: 1.5rem 0 4rem;         /* +espacio con recuadro descarga */
+}
+
+.carousel-dots button {
+  width: 8px;                    /* más pequeños */
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--light-brown);
+  opacity: .6;
+  cursor: pointer;
+  transition: transform .3s, opacity .3s;
+}
+
+.carousel-dots button:hover,
+.carousel-dots button.active {
+  transform: scale(1.8);         /* se agrandan */
+  opacity: 1;
+  background: var(--brown);
+}
+
+/* ===== Recuadro de descarga ===== */
+#descarga {
+  margin: 4rem auto 5rem;        
+}

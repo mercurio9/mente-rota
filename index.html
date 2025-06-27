@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mente Rota – Videojuego</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Mente Rota</h1>
+    <nav>
+      <a href="#historia">Historia</a>
+      <a href="#assets">Assets</a>
+      <a href="#estetica">Estética</a>
+      <a href="#descarga">Descarga</a>
+    </nav>
+  </header>
+
+  <!-- ===== CARROUSEL ===== -->
+  <div class="carousel">
+    <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+
+    <div class="carousel-track">
+      <!-- 1 Historia -->
+      <section id="historia" class="slide content-box">
+        <h2>Historia Principal</h2>
+        <p>Yencell despierta en un mundo surrealista donde los colores se desvanecen…</p>
+        <h3>Diálogo inicial (Nivel 1 – “El Vacío”)</h3>
+        <blockquote>
+          <p><em>La Voz:</em> «Despertaste, pero no en el mundo que conoces…»</p>
+          <p><em>Yencell:</em> «¿Dónde estoy? ¿Qué es esto?»</p>
+        </blockquote>
+      </section>
+
+      <!-- 2 Descripción -->
+      <section id="descripcion" class="slide content-box">
+        <h2>¿Qué es Mente Rota?</h2>
+        <p>Videojuego de aventura psicológica donde exploras recuerdos y emociones…</p>
+      </section>
+
+      <!-- 3 Personaje -->
+      <section id="personaje" class="slide content-box">
+        <h2>Personaje Principal</h2>
+        <ul>
+          <li><strong>Nombre:</strong> Yencell</li>
+          <li><strong>Edad:</strong> 19 años</li>
+          <li><strong>Habilidad:</strong> Luz interior que purifica emociones</li>
+        </ul>
+      </section>
+
+      <!-- 4 Niveles -->
+      <section id="niveles" class="slide content-box">
+        <h2>Niveles del Juego</h2>
+        <ul>
+          <li><strong>El Vacío:</strong> Sala central que conecta todo.</li>
+          <li><strong>Miedo:</strong> Evita las sombras usando tu luz.</li>
+          <li><strong>Recuerdo:</strong> Une memorias como un rompecabezas.</li>
+          <li><strong>Culpa:</strong> Plataformas y peso emocional.</li>
+          <li><strong>Ira:</strong> Resuelve sin violencia.</li>
+          <li><strong>Vergüenza:</strong> Esquiva cámaras de juicio.</li>
+          <li><strong>El Espejo:</strong> Confronta tu reflejo final.</li>
+        </ul>
+      </section>
+
+      <!-- 5 Controles -->
+      <section id="controles" class="slide content-box">
+        <h2>Controles</h2>
+        <ul>
+          <li>Movimiento: Flechas / W A S D</li>
+          <li>Interactuar: E / Espacio</li>
+          <li>Luz interior: F / Clic izquierdo</li>
+          <li>Pausa: ESC</li>
+        </ul>
+      </section>
+
+      <!-- 6 FAQ -->
+      <section id="faq" class="slide content-box">
+        <h2>Preguntas Frecuentes</h2>
+        <p><strong>¿Puedo guardar?</strong> Sí, al terminar cada nivel.</p>
+        <p><strong>¿Qué pasa si muero?</strong> Reapareces desde el último punto guardado.</p>
+      </section>
+
+      <!-- 7 Assets -->
+      <section id="assets" class="slide content-box">
+        <h2>Assets del Juego</h2>
+        <h3>Tiles</h3>
+        <ul><li>Piso neutro (blanco-negro)</li><li>Cristales rotos</li></ul>
+        <h3>Sprites</h3>
+        <ul><li>Yencell: idle, caminar, iluminar</li></ul>
+      </section>
+
+      <!-- 8 Estética -->
+      <section id="estetica" class="slide content-box">
+        <h2>Estética y Estilo Visual</h2>
+        <ul>
+          <li>Minimalista (1-3 colores por nivel).</li>
+          <li>Surrealista y distorsionado.</li>
+          <li>Animaciones suaves.</li>
+        </ul>
+      </section>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Siguiente">❯</button>
+  </div>
+
+  <!-- puntitos -->
+  <div class="carousel-dots"></div>
+
+  <!-- ===== DESCARGA fuera del carrusel ===== -->
+  <section id="descarga" class="content-box">
+    <h2>Descarga</h2>
+    <p>Descarga el manual de usuario:</p>
+    <button onclick="descargarManual()">Descargar Manual</button>
+  </section>
+
+  <footer>
+    <p>Desarrollado por el equipo de Mente Rota © 2025</p>
+  </footer>
+</body>
+</html>
