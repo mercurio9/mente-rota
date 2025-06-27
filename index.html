@@ -1,122 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mente Rota – Videojuego</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header>
-    <h1>Mente Rota</h1>
-    <nav>
-      <a href="#historia">Historia</a>
-      <a href="#assets">Assets</a>
-      <a href="#estetica">Estética</a>
-      <a href="#descarga">Descarga</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mente Rota - Videojuego</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
 
-  <!-- ===== CARROUSEL ===== -->
-  <div class="carousel">
-    <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+  <body>
+    <section class="welcome-section">
+      <header class="navigation-bar">
+        <img src="./assets/image/logo.png" alt="Mente Rota" />
 
-    <div class="carousel-track">
-      <!-- 1 Historia -->
-      <section id="historia" class="slide content-box">
-        <h2>Historia Principal</h2>
-        <p>Yencell despierta en un mundo surrealista donde los colores se desvanecen…</p>
-        <h3>Diálogo inicial (Nivel 1 – “El Vacío”)</h3>
-        <blockquote>
-          <p><em>La Voz:</em> «Despertaste, pero no en el mundo que conoces…»</p>
-          <p><em>Yencell:</em> «¿Dónde estoy? ¿Qué es esto?»</p>
-        </blockquote>
-      </section>
+        <nav>
+          <a href="#history">Historia</a>
+          <a href="#assets">Assets</a>
+          <a href="#estetica">Estética</a>
+          <a class="download-btn" href="pages/game.html">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.055 11.2633C16.2479 11.114 16.404 10.9225 16.5115 10.7036C16.6189 10.4846 16.6748 10.2439 16.6748 9.99998C16.6748 9.75606 16.6189 9.51538 16.5115 9.2964C16.404 9.07741 16.2479 8.88593 16.055 8.73664C13.5568 6.80428 10.7676 5.28087 7.79167 4.22331L7.2475 4.02998C6.2075 3.66081 5.10833 4.36414 4.9675 5.43831C4.57417 8.4667 4.57417 11.5333 4.9675 14.5616C5.10917 15.6358 6.2075 16.3391 7.2475 15.97L7.79167 15.7766C10.7676 14.7191 13.5568 13.1957 16.055 11.2633Z"
+                fill="green"
+              />
+            </svg>
+            Comenzar
+          </a>
+        </nav>
+      </header>
 
-      <!-- 2 Descripción -->
-      <section id="descripcion" class="slide content-box">
-        <h2>¿Qué es Mente Rota?</h2>
-        <p>Videojuego de aventura psicológica donde exploras recuerdos y emociones…</p>
-      </section>
+      <div class="welcome-content">
+        <img src="./assets/image/logo-2.png" alt="Mente Rota" />
+        <p>
+          Un videojuego de aventura psicológica donde tus emociones son tus peores enemigos... y tu
+          única salida.
+        </p>
 
-      <!-- 3 Personaje -->
-      <section id="personaje" class="slide content-box">
-        <h2>Personaje Principal</h2>
-        <ul>
-          <li><strong>Nombre:</strong> Yencell</li>
-          <li><strong>Edad:</strong> 19 años</li>
-          <li><strong>Habilidad:</strong> Luz interior que purifica emociones</li>
-        </ul>
-      </section>
+        <div class="group-btns">
+          <a href="#history" class="download-btn">
+            Conocer mas
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.50001 9.16668L4.16667 12.5M4.16667 12.5L7.50001 15.8333M4.16667 12.5H13.3333C14.2174 12.5 15.0652 12.1488 15.6904 11.5237C16.3155 10.8986 16.6667 10.0507 16.6667 9.16668C16.6667 8.28262 16.3155 7.43478 15.6904 6.80965C15.0652 6.18453 14.2174 5.83334 13.3333 5.83334H12.5"
+                stroke="black"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
 
-      <!-- 4 Niveles -->
-      <section id="niveles" class="slide content-box">
-        <h2>Niveles del Juego</h2>
-        <ul>
-          <li><strong>El Vacío:</strong> Sala central que conecta todo.</li>
-          <li><strong>Miedo:</strong> Evita las sombras usando tu luz.</li>
-          <li><strong>Recuerdo:</strong> Une memorias como un rompecabezas.</li>
-          <li><strong>Culpa:</strong> Plataformas y peso emocional.</li>
-          <li><strong>Ira:</strong> Resuelve sin violencia.</li>
-          <li><strong>Vergüenza:</strong> Esquiva cámaras de juicio.</li>
-          <li><strong>El Espejo:</strong> Confronta tu reflejo final.</li>
-        </ul>
-      </section>
+          <a class="download-btn" href="pages/game.html">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.055 11.2633C16.2479 11.114 16.404 10.9225 16.5115 10.7036C16.6189 10.4846 16.6748 10.2439 16.6748 9.99998C16.6748 9.75606 16.6189 9.51538 16.5115 9.2964C16.404 9.07741 16.2479 8.88593 16.055 8.73664C13.5568 6.80428 10.7676 5.28087 7.79167 4.22331L7.2475 4.02998C6.2075 3.66081 5.10833 4.36414 4.9675 5.43831C4.57417 8.4667 4.57417 11.5333 4.9675 14.5616C5.10917 15.6358 6.2075 16.3391 7.2475 15.97L7.79167 15.7766C10.7676 14.7191 13.5568 13.1957 16.055 11.2633Z"
+                fill="green"
+              />
+            </svg>
+            Jugar
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <!-- 5 Controles -->
-      <section id="controles" class="slide content-box">
-        <h2>Controles</h2>
-        <ul>
-          <li>Movimiento: Flechas / W A S D</li>
-          <li>Interactuar: E / Espacio</li>
-          <li>Luz interior: F / Clic izquierdo</li>
-          <li>Pausa: ESC</li>
-        </ul>
-      </section>
+    <section id="history" class="history-section">
+      <div class="max-width">
+        <h2 class="title-section">¿Qué es Mente Rota?</h2>
+        <p>
+          <b>Mente Rota</b> es un videojuego de aventura psicológica que te sumerge en un mundo
+          surrealista donde las emociones toman forma y los recuerdos se convierten en escenarios
+          que debes enfrentar. Juegas como Yencell, un joven que despierta en un entorno extraño y
+          distorsionado, donde los colores se apagan, la lógica se desdibuja y nada parece tener
+          sentido. Lo único claro es una voz que lo guía con una advertencia:
+        </p>
+        <p>
+          A lo largo del juego, recorrerás niveles que representan emociones humanas profundas:
+          miedo, culpa, ira, vergüenza, entre otras. Cada una se manifiesta en desafíos únicos y
+          escenarios simbólicos que ponen a prueba no solo tu habilidad, sino también tu
+          interpretación emocional. Con la ayuda de tu luz interior
+          <i>—una habilidad que te permite purificar y protegerte—</i>, deberás avanzar entre
+          sombras, recuerdos rotos y juicios silenciosos.
+        </p>
+        <p>
+          Más que un simple juego, <b>Mente Rota</b> es una exploración de la mente fragmentada, un
+          viaje introspectivo donde el objetivo no es solo escapar, sino comprender quién eres, qué
+          has perdido y si estás listo para enfrentar tu reflejo final.
+        </p>
+      </div>
+    </section>
 
-      <!-- 6 FAQ -->
-      <section id="faq" class="slide content-box">
-        <h2>Preguntas Frecuentes</h2>
-        <p><strong>¿Puedo guardar?</strong> Sí, al terminar cada nivel.</p>
-        <p><strong>¿Qué pasa si muero?</strong> Reapareces desde el último punto guardado.</p>
-      </section>
+    <section id="assets" class="assets-section">
+      <div>
+        <h2 class="title-section">Assets del Juego</h2>
+        <button class="download-btn" onclick="descargarManual()">Descargar Manual</button>
+      </div>
+    </section>
 
-      <!-- 7 Assets -->
-      <section id="assets" class="slide content-box">
-        <h2>Assets del Juego</h2>
-        <h3>Tiles</h3>
-        <ul><li>Piso neutro (blanco-negro)</li><li>Cristales rotos</li></ul>
-        <h3>Sprites</h3>
-        <ul><li>Yencell: idle, caminar, iluminar</li></ul>
-      </section>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <img src="./assets/image/logo.png" alt="Mente Rota" class="footer-logo" />
 
-      <!-- 8 Estética -->
-      <section id="estetica" class="slide content-box">
-        <h2>Estética y Estilo Visual</h2>
-        <ul>
-          <li>Minimalista (1-3 colores por nivel).</li>
-          <li>Surrealista y distorsionado.</li>
-          <li>Animaciones suaves.</li>
-        </ul>
-      </section>
-    </div>
+        <nav class="footer-nav">
+          <a href="#history">Historia</a>
+          <a href="#assets">Assets</a>
+          <a href="#estetica">Estética</a>
+          <a href="pages/game.html">Comenzar</a>
+        </nav>
+      </div>
 
-    <button class="carousel-btn next" aria-label="Siguiente">❯</button>
-  </div>
-
-  <!-- puntitos -->
-  <div class="carousel-dots"></div>
-
-  <!-- ===== DESCARGA fuera del carrusel ===== -->
-  <section id="descarga" class="content-box">
-    <h2>Descarga</h2>
-    <p>Descarga el manual de usuario:</p>
-    <button onclick="descargarManual()">Descargar Manual</button>
-  </section>
-
-  <footer>
-    <p>Desarrollado por el equipo de Mente Rota © 2025</p>
-  </footer>
-</body>
+      <p class="copyright">© 2025 Mente Rota — Todos los derechos reservados.</p>
+    </footer>
+  </body>
 </html>
