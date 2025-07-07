@@ -32,7 +32,7 @@ body {
   width: 100%;
   height: 100vh;
   background: linear-gradient(#00000000, #03080c),
-    url(./assets/image/background.jpg) center/cover no-repeat;
+    url(./image/background.jpg) center/cover no-repeat;
 }
 
 .navigation-bar {
