@@ -26,11 +26,3 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
-
-/* ---------- descarga del manual ---------- */
-function descargarManual() {
-  const link = document.createElement("a");
-  link.href = "assets/manual-mente-rota.pdf";
-  link.download = "Manual_Mente_Rota.pdf";
-  link.click();
-}

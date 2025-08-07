@@ -7,6 +7,12 @@
   --very-light: #eaddd3;
 }
 
+.permanent-marker-regular {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +28,16 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 20px 0;
+  color: #cdcdcd;
+  line-height: 26px;
+}
+
 body {
   font-family: "Arial", sans-serif;
-  background-color: #03080c;
   color: #fff;
+  background-color: #03080c;
 }
 
 .welcome-section {
@@ -41,6 +53,10 @@ body {
   align-items: center;
   flex-wrap: wrap;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: 100%;
   padding: 30px 52px;
 }
@@ -51,13 +67,17 @@ body {
   gap: 24px;
 }
 
+.navigation-bar nav a {
+  color: white;
+}
+
 .download-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  color: #000;
+  color: #000 !important;
   font-weight: bold;
   background-color: #fff;
   border-radius: 12px;
@@ -73,7 +93,7 @@ body {
 }
 
 nav a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
 }
@@ -90,6 +110,10 @@ nav a {
 
 .title-section {
   font-size: 60px;
+  margin-bottom: 30px;
+  font-family: "Knewave", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .welcome-content p {
@@ -103,11 +127,22 @@ nav a {
 }
 
 .history-section {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   height: 100vh;
-  background-color: #03080c;
+}
+
+.history-info {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  padding: 0 100px;
+}
+
+.history-section img {
+  width: 100%;
+  border-radius: 20px 0 0 20px;
 }
 
 .assets-section {
@@ -115,34 +150,49 @@ nav a {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #03080c;
 }
 
 .history-section p {
   color: #cdcdcd;
-  line-height: 26px;
 }
 
 .max-width {
   display: flex;
   flex-direction: column;
   gap: 48px;
-  max-width: 700px;
+  max-width: 900px;
   text-align: center;
 }
 
 .content-box {
   max-width: 900px;
   margin: 2rem auto;
-  background: var(--soft-beige);
   padding: 2rem;
   box-shadow: 0 0 15px rgba(45, 30, 23, 0.3);
   border-radius: 10px;
 }
 
+.team-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  h2 {
+    margin: 16px 0 20px 0;
+  }
+}
+
+.tag {
+  padding: 5px 15px;
+  color: black;
+  background-color: #fff;
+  border-radius: 50px;
+  font-style: italic;
+}
+
 footer {
   text-align: center;
-  background: var(--brown);
   padding: 1rem;
   color: #fff;
 }
@@ -223,13 +273,26 @@ footer {
   background: var(--brown);
 }
 
+.row-team {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 30px;
+}
+
+.row-team img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
 /* ===== Recuadro de descarga ===== */
 #descarga {
   margin: 4rem auto 5rem;
 }
 
 .main-footer {
-  background-color: #03080c;
   color: #eee;
   padding: 40px 20px 20px;
   text-align: center;
