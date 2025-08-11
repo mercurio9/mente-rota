@@ -1,4 +1,33 @@
-// -------------------- Scenes (defínelas antes del config) --------------------
+const ASSETS_URL = "../../assets/image";
+const ASSETS_SCENES_URL = `${ASSETS_URL}/scenes`;
+const ASSETS_PLATFORMS_URL = `${ASSETS_URL}/platforms`;
+const ASSETS_ENEMIES_URL = `${ASSETS_URL}/enemies`;
+const ASSETS_UI_URL = `${ASSETS_URL}/ui`;
+const ASSETS_SOUNDS_URL = "../../assets/sounds";
+
+const BTNS_CHANGE_LEVELS = Array.from(document.querySelectorAll("#change-level-btn"));
+
+function updateLevelButtons() {
+  let unlockedLevels = JSON.parse(localStorage.getItem("unlockedLevels") || "[1]");
+
+  BTNS_CHANGE_LEVELS.forEach((btn) => {
+    const levelNum = parseInt(btn.dataset.level.replace("Level", "").replace("Scene", ""));
+    if (unlockedLevels.includes(levelNum)) {
+      btn.disabled = false;
+    } else {
+      btn.disabled = true;
+    }
+  });
+}
+
+BTNS_CHANGE_LEVELS.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const currentScene = game.scene.getScenes(true)[0];
+    currentScene.scene.start(btn.dataset.level);
+  });
+});
+
+updateLevelButtons(); // ejecuta al inicio
 class BootScene extends Phaser.Scene {
   constructor() {
     super({ key: "BootScene" });
@@ -6,39 +35,43 @@ class BootScene extends Phaser.Scene {
 
   preload() {
     // Scenes
-    this.load.image("beach", "../assets/image/scenes/beach.png");
-    this.load.image("night-forest", "../assets/image/scenes/night-forest.png");
-    this.load.image("desert", "../assets/image/scenes/desert.png");
-    this.load.image("cold-night", "../assets/image/scenes/cold-night.png");
-    this.load.image("countryside", "../assets/image/scenes/countryside.png");
+    this.load.image("beach", `${ASSETS_SCENES_URL}/beach.png`);
+    this.load.image("night-forest", `${ASSETS_SCENES_URL}/night-forest.png`);
+    this.load.image("desert", `${ASSETS_SCENES_URL}/desert.png`);
+    this.load.image("cold-night", `${ASSETS_SCENES_URL}/cold-night.png`);
+    this.load.image("countryside", `${ASSETS_SCENES_URL}/countryside.png`);
 
     // Platforms
-    this.load.image("grass-platform", "../assets/image/platforms/grass-platform.png");
-    this.load.image("mud-platform", "../assets/image/platforms/mud-platform.png");
-    this.load.image("sand-platform", "../assets/image/platforms/sand-platform.png");
-    this.load.image("ice-platform", "../assets/image/platforms/ice-platform.png");
-    this.load.image("lava-platform", "../assets/image/platforms/lava-platform.png");
+    this.load.image("grass-platform", `${ASSETS_PLATFORMS_URL}/grass-platform.png`);
+    this.load.image("mud-platform", `${ASSETS_PLATFORMS_URL}/mud-platform.png`);
+    this.load.image("sand-platform", `${ASSETS_PLATFORMS_URL}/sand-platform.png`);
+    this.load.image("ice-platform", `${ASSETS_PLATFORMS_URL}/ice-platform.png`);
+    this.load.image("lava-platform", `${ASSETS_PLATFORMS_URL}/lava-platform.png`);
 
-    this.load.image("star", "../assets/image/star.png");
-    this.load.image("bomb", "../assets/image/enemies/bomb.png");
-    this.load.spritesheet("dude", "../assets/image/dude.png", { frameWidth: 32, frameHeight: 48 });
+    // Items & enemies
+    this.load.image("star", `${ASSETS_URL}/star.png`);
+    this.load.image("bomb", `${ASSETS_ENEMIES_URL}/bomb.png`);
+    this.load.spritesheet("dude", `${ASSETS_URL}/dude.png`, {
+      frameWidth: 32,
+      frameHeight: 48,
+    });
 
     // UI
-    this.load.image("gameOverImg", "../assets/image/ui/game-over.png");
-    this.load.image("levelCompleted", "../assets/image/ui/level-completed.png");
-    this.load.image("endGame", "../assets/image/ui/end-game.png");
+    this.load.image("gameOverImg", `${ASSETS_UI_URL}/game-over.png`);
+    this.load.image("levelCompleted", `${ASSETS_UI_URL}/level-completed.png`);
+    this.load.image("endGame", `${ASSETS_UI_URL}/end-game.png`);
 
     // Buttons
-    this.load.image("nextLevelBtn", "../assets/image/ui/next-level.png");
-    this.load.image("playAgainBtn", "../assets/image/ui/play-again.png");
-    this.load.image("restartBtn", "../assets/image/ui/restart-btn.png");
+    this.load.image("nextLevelBtn", `${ASSETS_UI_URL}/next-level.png`);
+    this.load.image("playAgainBtn", `${ASSETS_UI_URL}/play-again.png`);
+    this.load.image("restartBtn", `${ASSETS_UI_URL}/restart-btn.png`);
 
     // Sounds
-    this.load.audio("starSound", "../assets/sounds/star.mp3");
-    this.load.audio("maniacalLaughter", "../assets/sounds/maniacal-laughter.mp3");
-    this.load.audio("bombExplosion", "../assets/sounds/bomb-explosion.wav");
-    this.load.audio("winchimes", "../assets/sounds/winchimes.mp3");
-    this.load.audio("orchestralWin", "../assets/sounds/orchestral-win.mp3");
+    this.load.audio("starSound", `${ASSETS_SOUNDS_URL}/star.mp3`);
+    this.load.audio("maniacalLaughter", `${ASSETS_SOUNDS_URL}/maniacal-laughter.mp3`);
+    this.load.audio("bombExplosion", `${ASSETS_SOUNDS_URL}/bomb-explosion.wav`);
+    this.load.audio("winchimes", `${ASSETS_SOUNDS_URL}/winchimes.mp3`);
+    this.load.audio("orchestralWin", `${ASSETS_SOUNDS_URL}/orchestral-win.mp3`);
   }
 
   create() {
@@ -232,6 +265,15 @@ class LevelCompleteScene extends Phaser.Scene {
     this.add.image(450, 300, bg).setOrigin(0.5);
     this.add.image(450, 300, "levelCompleted").setOrigin(0.5);
 
+    // Guardar progreso
+    let unlockedLevels = JSON.parse(localStorage.getItem("unlockedLevels") || "[1]");
+    const nextLevelNum = parseInt(data.nextScene.match(/\d+/)[0]);
+    if (!unlockedLevels.includes(nextLevelNum)) {
+      unlockedLevels.push(nextLevelNum);
+      localStorage.setItem("unlockedLevels", JSON.stringify(unlockedLevels));
+    }
+    updateLevelButtons();
+
     const btn = this.add.image(450, 400, "nextLevelBtn").setInteractive({ useHandCursor: true });
     btn.on("pointerdown", () => {
       this.sound.stopAll();
@@ -279,6 +321,7 @@ const config = {
   type: Phaser.AUTO,
   width: 900,
   height: 600,
+  parent: "game",
   physics: { default: "arcade", arcade: { gravity: { y: 300 }, debug: false } },
   scene: [
     BootScene,
