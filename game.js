@@ -42,7 +42,7 @@ class BootScene extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start("Level5Scene");
+    this.scene.start("Level1Scene");
   }
 }
 
@@ -72,9 +72,9 @@ class BaseLevel extends Phaser.Scene {
 
     // Platforms
     this.platforms = this.physics.add.staticGroup();
-    this.platforms.create(450, 590, this.platformKey).setScale(2.5).refreshBody();
+    this.platforms.create(450, 600, this.platformKey).setScale(2.5).refreshBody();
     this.platforms.create(650, 400, this.platformKey);
-    this.platforms.create(50, 250, this.platformKey);
+    this.platforms.create(100, 250, this.platformKey);
     this.platforms.create(750, 220, this.platformKey);
 
     // Player
