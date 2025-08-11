@@ -1,185 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mente Rota - Videojuego</title>
+    <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script src="script.js" defer></script>
+    <meta name="theme-color" content="#03080c" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mente Rota - Videojuego</title>
-  <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="manifest" href="manifest.json" />
-  <script src="script.js" defer></script>
-  <meta name="theme-color" content="#03080c" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <section class="welcome-section">
+      <header class="navigation-bar">
+        <img src="./assets/image/logo.png" alt="Mente Rota" />
 
-<body>
-  <section class="welcome-section">
-    <header class="navigation-bar">
-      <img src="./assets/image/logo.png" alt="Mente Rota" />
+        <nav>
+          <a href="#history">Historia</a>
+          <a href="#style">Estética</a>
+          <a href="#team">Equipo</a>
+          <a class="download-btn" href="pages/game.html">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.055 11.2633C16.2479 11.114 16.404 10.9225 16.5115 10.7036C16.6189 10.4846 16.6748 10.2439 16.6748 9.99998C16.6748 9.75606 16.6189 9.51538 16.5115 9.2964C16.404 9.07741 16.2479 8.88593 16.055 8.73664C13.5568 6.80428 10.7676 5.28087 7.79167 4.22331L7.2475 4.02998C6.2075 3.66081 5.10833 4.36414 4.9675 5.43831C4.57417 8.4667 4.57417 11.5333 4.9675 14.5616C5.10917 15.6358 6.2075 16.3391 7.2475 15.97L7.79167 15.7766C10.7676 14.7191 13.5568 13.1957 16.055 11.2633Z"
+                fill="green"
+              />
+            </svg>
+            Jugar
+          </a>
+        </nav>
+      </header>
 
-      <nav>
-        <a href="#history">Historia</a>
-        <a href="#style">Estética</a>
-        <a href="#team">Equipo</a>
-        <a class="download-btn" href="pages/game.html">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M16.055 11.2633C16.2479 11.114 16.404 10.9225 16.5115 10.7036C16.6189 10.4846 16.6748 10.2439 16.6748 9.99998C16.6748 9.75606 16.6189 9.51538 16.5115 9.2964C16.404 9.07741 16.2479 8.88593 16.055 8.73664C13.5568 6.80428 10.7676 5.28087 7.79167 4.22331L7.2475 4.02998C6.2075 3.66081 5.10833 4.36414 4.9675 5.43831C4.57417 8.4667 4.57417 11.5333 4.9675 14.5616C5.10917 15.6358 6.2075 16.3391 7.2475 15.97L7.79167 15.7766C10.7676 14.7191 13.5568 13.1957 16.055 11.2633Z"
-              fill="green" />
-          </svg>
-          Jugar
-        </a>
-      </nav>
-    </header>
-
-    <div class="welcome-content">
-      <img src="./assets/image/logo-2.png" alt="Mente Rota" />
-      <p>
-        Un videojuego de aventura psicológica donde tus emociones son tus peores enemigos... y tu
-        única salida.
-      </p>
-
-      <div class="group-btns">
-        <a href="#history" class="download-btn">
-          Conocer mas
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7.50001 9.16668L4.16667 12.5M4.16667 12.5L7.50001 15.8333M4.16667 12.5H13.3333C14.2174 12.5 15.0652 12.1488 15.6904 11.5237C16.3155 10.8986 16.6667 10.0507 16.6667 9.16668C16.6667 8.28262 16.3155 7.43478 15.6904 6.80965C15.0652 6.18453 14.2174 5.83334 13.3333 5.83334H12.5"
-              stroke="black" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </a>
-
-        <a class="download-btn" href="pages/game.html">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M16.055 11.2633C16.2479 11.114 16.404 10.9225 16.5115 10.7036C16.6189 10.4846 16.6748 10.2439 16.6748 9.99998C16.6748 9.75606 16.6189 9.51538 16.5115 9.2964C16.404 9.07741 16.2479 8.88593 16.055 8.73664C13.5568 6.80428 10.7676 5.28087 7.79167 4.22331L7.2475 4.02998C6.2075 3.66081 5.10833 4.36414 4.9675 5.43831C4.57417 8.4667 4.57417 11.5333 4.9675 14.5616C5.10917 15.6358 6.2075 16.3391 7.2475 15.97L7.79167 15.7766C10.7676 14.7191 13.5568 13.1957 16.055 11.2633Z"
-              fill="green" />
-          </svg>
-          Jugar
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="history" class="history-section">
-    <div class="history-info">
-      <h2 class="title-section">¿Qué es Mente Rota?</h2>
-      <p>
-        Es un videojuego de aventura psicológica que te sumerge en un mundo
-        surrealista donde las emociones toman forma y los recuerdos se convierten en escenarios
-        que debes enfrentar. Juegas como Yencell, un joven que despierta en un entorno extraño y
-        distorsionado, donde los colores se apagan, la lógica se desdibuja y nada parece tener
-        sentido. Lo único claro es una voz que lo guía con una advertencia:
-      </p>
-      <p>
-        A lo largo del juego, recorrerás niveles que representan emociones humanas profundas:
-        miedo, culpa, ira, vergüenza, entre otras. Cada una se manifiesta en desafíos únicos y
-        escenarios simbólicos que ponen a prueba no solo tu habilidad, sino también tu
-        interpretación emocional. Con la ayuda de tu luz interior
-        <i>—una habilidad que te permite purificar y protegerte—</i>, deberás avanzar entre
-        sombras, recuerdos rotos y juicios silenciosos.
-      </p>
-      <p>
-        Más que un simple juego, <b>Mente Rota</b> es una exploración de la mente fragmentada, un
-        viaje introspectivo donde el objetivo no es solo escapar, sino comprender quién eres, qué
-        has perdido y si estás listo para enfrentar tu reflejo final.
-      </p>
-    </div>
-
-    <img class="screenshot" src="./assets/image/screenshot-game.png" alt="">
-  </section>
-
-  <section id="style" class="assets-section">
-    <div class="max-width" style="flex-direction: row; align-items: flex-end; gap: 50px;">
-      <div style="text-align: start;">
-        <h2 class="title-section">Estética</h2>
+      <div class="welcome-content">
+        <img src="./assets/image/logo-2.png" alt="Mente Rota" />
         <p>
-          Elegimos utilizar un estilo 2D pixelado porque transmite una estética nostálgica que conecta inmediatamente
-          con una generación de jugadores que crecieron con consolas clásicas. El arte pixelado no solo es visualmente
-          atractivo, sino que también tiene una personalidad única que le da alma al juego. Cada sprite, por simple que
-          parezca, está cuidadosamente diseñado para transmitir emociones, movimiento y carisma en un espacio muy
-          reducido, lo cual le da mucho mérito artístico y técnico.
-        </p>
-        <p>
-          Además, el estilo pixel art se adapta perfectamente a las necesidades de este proyecto, tanto a nivel técnico
-          como creativo. Su naturaleza ligera permite una mejor optimización del rendimiento, lo cual es clave si el
-          objetivo es mantener el juego accesible desde distintas plataformas, incluyendo dispositivos con recursos
-          limitados. El bajo peso de los sprites facilita tiempos de carga rápidos y una experiencia fluida sin
-          sacrificar calidad visual.
+          Un videojuego de aventura psicológica donde tus emociones son tus peores enemigos... y tu
+          única salida.
         </p>
 
-        <a class="download-btn" style="width: fit-content;" href="./assets/manual-mente-rota.pdf"
-          download="Manual de Usuario - Mente Rota">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M10 1.66663L10.0975 1.67246C10.2836 1.6944 10.4568 1.77836 10.5892 1.9108C10.7216 2.04325 10.8056 2.21645 10.8275 2.40246L10.8334 2.49996V5.83329L10.8375 5.95829C10.8674 6.3551 11.0382 6.72815 11.3191 7.00998C11.6 7.29182 11.9725 7.46385 12.3692 7.49496L12.5 7.49996H15.8334L15.9309 7.50579C16.1169 7.52773 16.2901 7.61169 16.4225 7.74414C16.555 7.87658 16.6389 8.04978 16.6609 8.23579L16.6667 8.33329V15.8333C16.6667 16.471 16.4231 17.0846 15.9856 17.5485C15.5482 18.0125 14.95 18.2917 14.3134 18.3291L14.1667 18.3333H5.83337C5.1957 18.3333 4.58211 18.0897 4.11816 17.6522C3.6542 17.2148 3.37495 16.6165 3.33754 15.98L3.33337 15.8333V4.16663C3.33334 3.52895 3.57698 2.91536 4.01444 2.45141C4.45191 1.98745 5.05013 1.7082 5.68671 1.67079L5.83337 1.66663H10ZM10 8.33329C9.77903 8.33329 9.56707 8.42109 9.41079 8.57737C9.2545 8.73365 9.16671 8.94561 9.16671 9.16663V12.1541L8.50587 11.4941C8.36238 11.3506 8.17146 11.2645 7.96894 11.2517C7.76642 11.239 7.56621 11.3006 7.40587 11.425L7.32754 11.4941C7.17131 11.6504 7.08355 11.8623 7.08355 12.0833C7.08355 12.3043 7.17131 12.5162 7.32754 12.6725L9.41087 14.7558L9.44754 14.7908L9.50421 14.8366L9.59587 14.8958L9.69087 14.9408L9.77837 14.97L9.90337 14.995L10 15L10.0975 14.9941L10.195 14.9775L10.285 14.95L10.3525 14.9216L10.4342 14.8783L10.5109 14.825L10.5892 14.7558L12.6725 12.6725C12.8288 12.5162 12.9165 12.3043 12.9165 12.0833C12.9165 11.8623 12.8288 11.6504 12.6725 11.4941L12.5942 11.425C12.4339 11.3006 12.2337 11.239 12.0311 11.2517C11.8286 11.2645 11.6377 11.3506 11.4942 11.4941L10.8334 12.1533V9.16663C10.8333 8.96251 10.7584 8.76551 10.6228 8.61298C10.4871 8.46045 10.3002 8.36301 10.0975 8.33913L10 8.33329ZM12.4992 2.49913L15.8334 5.83329H12.5L12.4992 2.49913Z"
-              fill="black" />
-          </svg>
-          Descargar Manual
-        </a>
-      </div>
+        <div class="group-btns">
+          <a href="#history" class="download-btn">
+            Conocer mas
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.50001 9.16668L4.16667 12.5M4.16667 12.5L7.50001 15.8333M4.16667 12.5H13.3333C14.2174 12.5 15.0652 12.1488 15.6904 11.5237C16.3155 10.8986 16.6667 10.0507 16.6667 9.16668C16.6667 8.28262 16.3155 7.43478 15.6904 6.80965C15.0652 6.18453 14.2174 5.83334 13.3333 5.83334H12.5"
+                stroke="black"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
 
-      <div>
-        <img src="./assets/image/dude-front.png" alt="" />
-      </div>
-    </div>
-  </section>
-
-  <section id="team" class="team-section">
-    <div class="max-width">
-      <h2 class="title-section">Nuestro equipo</h2>
-
-      <div class="row-team">
-        <div>
-          <img src="assets/image/team/arias.jpg" alt="">
-          <h2>Angel Arias</h2>
-          <span class="tag">Desarrollador Movil</span>
-        </div>
-
-        <div>
-          <img src="assets/image/team/sebastian.jpg" alt="">
-          <h2>Sebastian González</h2>
-          <span class="tag">Desarrollador Web</span>
-        </div>
-
-        <div>
-          <img src="assets/image/team/yahir.jpg" alt="">
-          <h2>Yahir Pérez</h2>
-          <span class="tag">Desarrollador Web</span>
-        </div>
-
-        <div>
-          <img src="assets/image/team/manuel.jpg" alt="">
-          <h2>Manuel Castro</h2>
-          <span class="tag">Diseñador Narrativo</span>
-        </div>
-
-        <div>
-          <img src="assets/image/team/cesar.jpg" alt="">
-          <h2>Cesar Escalante</h2>
-          <span class="tag">Diseñador Narrativo</span>
+          <a class="download-btn" href="pages/game.html">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.055 11.2633C16.2479 11.114 16.404 10.9225 16.5115 10.7036C16.6189 10.4846 16.6748 10.2439 16.6748 9.99998C16.6748 9.75606 16.6189 9.51538 16.5115 9.2964C16.404 9.07741 16.2479 8.88593 16.055 8.73664C13.5568 6.80428 10.7676 5.28087 7.79167 4.22331L7.2475 4.02998C6.2075 3.66081 5.10833 4.36414 4.9675 5.43831C4.57417 8.4667 4.57417 11.5333 4.9675 14.5616C5.10917 15.6358 6.2075 16.3391 7.2475 15.97L7.79167 15.7766C10.7676 14.7191 13.5568 13.1957 16.055 11.2633Z"
+                fill="green"
+              />
+            </svg>
+            Jugar
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="main-footer">
-    <div class="footer-content">
-      <img src="./image/logo.png" alt="Mente Rota" class="footer-logo" />
+    <section id="history" class="history-section">
+      <div class="history-info">
+        <h2 class="title-section">¿Qué es Mente Rota?</h2>
+        <p>
+          Es un videojuego de aventura psicológica que te sumerge en un mundo surrealista donde las
+          emociones toman forma y los recuerdos se convierten en escenarios que debes enfrentar.
+          Juegas como Yencell, un joven que despierta en un entorno extraño y distorsionado, donde
+          los colores se apagan, la lógica se desdibuja y nada parece tener sentido. Lo único claro
+          es una voz que lo guía con una advertencia:
+        </p>
+        <p>
+          A lo largo del juego, recorrerás niveles que representan emociones humanas profundas:
+          miedo, culpa, ira, vergüenza, entre otras. Cada una se manifiesta en desafíos únicos y
+          escenarios simbólicos que ponen a prueba no solo tu habilidad, sino también tu
+          interpretación emocional. Con la ayuda de tu luz interior
+          <i>—una habilidad que te permite purificar y protegerte—</i>, deberás avanzar entre
+          sombras, recuerdos rotos y juicios silenciosos.
+        </p>
+        <p>
+          Más que un simple juego, <b>Mente Rota</b> es una exploración de la mente fragmentada, un
+          viaje introspectivo donde el objetivo no es solo escapar, sino comprender quién eres, qué
+          has perdido y si estás listo para enfrentar tu reflejo final.
+        </p>
+      </div>
 
-      <nav class="footer-nav">
-        <a href="#history">Historia</a>
-        <a href="#style">Estética</a>
-        <a href="#team">Equipo</a>
-        <a href="pages/game.html">Jugar</a>
-      </nav>
-    </div>
+      <img class="screenshot" src="./assets/image/screenshot-game.png" alt="" />
+    </section>
 
-    <p class="copyright">© 2025 Mente Rota — Todos los derechos reservados.</p>
-  </footer>
-</body>
+    <section id="style" class="assets-section">
+      <div class="max-width" style="flex-direction: row; align-items: flex-end; gap: 50px">
+        <div style="text-align: start">
+          <h2 class="title-section">Estética</h2>
+          <p>
+            Elegimos utilizar un estilo 2D pixelado porque transmite una estética nostálgica que
+            conecta inmediatamente con una generación de jugadores que crecieron con consolas
+            clásicas. El arte pixelado no solo es visualmente atractivo, sino que también tiene una
+            personalidad única que le da alma al juego. Cada sprite, por simple que parezca, está
+            cuidadosamente diseñado para transmitir emociones, movimiento y carisma en un espacio
+            muy reducido, lo cual le da mucho mérito artístico y técnico.
+          </p>
+          <p>
+            Además, el estilo pixel art se adapta perfectamente a las necesidades de este proyecto,
+            tanto a nivel técnico como creativo. Su naturaleza ligera permite una mejor optimización
+            del rendimiento, lo cual es clave si el objetivo es mantener el juego accesible desde
+            distintas plataformas, incluyendo dispositivos con recursos limitados. El bajo peso de
+            los sprites facilita tiempos de carga rápidos y una experiencia fluida sin sacrificar
+            calidad visual.
+          </p>
 
+          <a
+            class="download-btn"
+            style="width: fit-content"
+            href="./assets/manual-mente-rota.pdf"
+            download="Manual de Usuario - Mente Rota"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 1.66663L10.0975 1.67246C10.2836 1.6944 10.4568 1.77836 10.5892 1.9108C10.7216 2.04325 10.8056 2.21645 10.8275 2.40246L10.8334 2.49996V5.83329L10.8375 5.95829C10.8674 6.3551 11.0382 6.72815 11.3191 7.00998C11.6 7.29182 11.9725 7.46385 12.3692 7.49496L12.5 7.49996H15.8334L15.9309 7.50579C16.1169 7.52773 16.2901 7.61169 16.4225 7.74414C16.555 7.87658 16.6389 8.04978 16.6609 8.23579L16.6667 8.33329V15.8333C16.6667 16.471 16.4231 17.0846 15.9856 17.5485C15.5482 18.0125 14.95 18.2917 14.3134 18.3291L14.1667 18.3333H5.83337C5.1957 18.3333 4.58211 18.0897 4.11816 17.6522C3.6542 17.2148 3.37495 16.6165 3.33754 15.98L3.33337 15.8333V4.16663C3.33334 3.52895 3.57698 2.91536 4.01444 2.45141C4.45191 1.98745 5.05013 1.7082 5.68671 1.67079L5.83337 1.66663H10ZM10 8.33329C9.77903 8.33329 9.56707 8.42109 9.41079 8.57737C9.2545 8.73365 9.16671 8.94561 9.16671 9.16663V12.1541L8.50587 11.4941C8.36238 11.3506 8.17146 11.2645 7.96894 11.2517C7.76642 11.239 7.56621 11.3006 7.40587 11.425L7.32754 11.4941C7.17131 11.6504 7.08355 11.8623 7.08355 12.0833C7.08355 12.3043 7.17131 12.5162 7.32754 12.6725L9.41087 14.7558L9.44754 14.7908L9.50421 14.8366L9.59587 14.8958L9.69087 14.9408L9.77837 14.97L9.90337 14.995L10 15L10.0975 14.9941L10.195 14.9775L10.285 14.95L10.3525 14.9216L10.4342 14.8783L10.5109 14.825L10.5892 14.7558L12.6725 12.6725C12.8288 12.5162 12.9165 12.3043 12.9165 12.0833C12.9165 11.8623 12.8288 11.6504 12.6725 11.4941L12.5942 11.425C12.4339 11.3006 12.2337 11.239 12.0311 11.2517C11.8286 11.2645 11.6377 11.3506 11.4942 11.4941L10.8334 12.1533V9.16663C10.8333 8.96251 10.7584 8.76551 10.6228 8.61298C10.4871 8.46045 10.3002 8.36301 10.0975 8.33913L10 8.33329ZM12.4992 2.49913L15.8334 5.83329H12.5L12.4992 2.49913Z"
+                fill="black"
+              />
+            </svg>
+            Descargar Manual
+          </a>
+        </div>
+
+        <div>
+          <img src="./assets/image/dude-front.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="team-section">
+      <div class="max-width">
+        <h2 class="title-section">Nuestro equipo</h2>
+
+        <div class="row-team">
+          <div>
+            <img src="assets/image/team/arias.jpg" alt="" />
+            <h2>Angel Arias</h2>
+            <span class="tag">Desarrollador Movil</span>
+          </div>
+
+          <div>
+            <img src="assets/image/team/sebastian.jpg" alt="" />
+            <h2>Sebastian González</h2>
+            <span class="tag">Desarrollador Web</span>
+          </div>
+
+          <div>
+            <img src="assets/image/team/yahir.jpg" alt="" />
+            <h2>Yahir Pérez</h2>
+            <span class="tag">Desarrollador Web</span>
+          </div>
+
+          <div>
+            <img src="assets/image/team/manuel.jpg" alt="" />
+            <h2>Manuel Castro</h2>
+            <span class="tag">Diseñador Narrativo</span>
+          </div>
+
+          <div>
+            <img src="assets/image/team/cesar.jpg" alt="" />
+            <h2>Cesar Escalante</h2>
+            <span class="tag">Diseñador Narrativo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <img src="./image/logo.png" alt="Mente Rota" class="footer-logo" />
+
+        <nav class="footer-nav">
+          <a href="#history">Historia</a>
+          <a href="#style">Estética</a>
+          <a href="#team">Equipo</a>
+          <a href="pages/game.html">Jugar</a>
+        </nav>
+      </div>
+
+      <p class="copyright">© 2025 Mente Rota — Todos los derechos reservados.</p>
+    </footer>
+  </body>
 </html>
