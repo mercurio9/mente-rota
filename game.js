@@ -32,10 +32,17 @@ class BootScene extends Phaser.Scene {
     this.load.image("nextLevelBtn", "../assets/image/ui/next-level.png");
     this.load.image("playAgainBtn", "../assets/image/ui/play-again.png");
     this.load.image("restartBtn", "../assets/image/ui/restart-btn.png");
+
+    // Sounds
+    this.load.audio("starSound", "../assets/sounds/star.mp3");
+    this.load.audio("maniacalLaughter", "../assets/sounds/maniacal-laughter.mp3");
+    this.load.audio("bombExplosion", "../assets/sounds/bomb-explosion.wav");
+    this.load.audio("winchimes", "../assets/sounds/winchimes.mp3");
+    this.load.audio("orchestralWin", "../assets/sounds/orchestral-win.mp3");
   }
 
   create() {
-    this.scene.start("Level1Scene");
+    this.scene.start("Level5Scene");
   }
 }
 
@@ -52,6 +59,13 @@ class BaseLevel extends Phaser.Scene {
     // Reset state
     this.score = 0;
     this.gameOver = false;
+
+    // Sounds
+    this.starSound = this.sound.add("starSound");
+    this.maniacalLaughter = this.sound.add("maniacalLaughter");
+    this.bombExplosion = this.sound.add("bombExplosion");
+    this.winchimes = this.sound.add("winchimes");
+    this.orchestralWin = this.sound.add("orchestralWin");
 
     // Fondo
     this.add.image(450, 300, this.bgKey);
@@ -146,16 +160,19 @@ class BaseLevel extends Phaser.Scene {
   collectStar(player, star) {
     star.disableBody(true, true);
 
+    // reproducir sonido
+    this.starSound.play();
+
     if (typeof this.score !== "number") this.score = 0;
     this.score += 10;
     this.scoreText.setText("Score: " + this.score);
 
     if (this.score >= this.pointsWin) {
       if (!this.nextSceneKey) {
-        // Último nivel: pantalla final
+        this.orchestralWin.play();
         this.scene.start("EndGameScene", { score: this.score });
       } else {
-        // Niveles intermedios: pantalla de nivel completado
+        this.winchimes.play();
         this.scene.start("LevelCompleteScene", { nextScene: this.nextSceneKey, bgKey: this.bgKey });
       }
       return;
@@ -168,37 +185,39 @@ class BaseLevel extends Phaser.Scene {
   }
 
   hitBomb() {
-    this.scene.start("GameOverScene", { score: this.score });
+    this.bombExplosion.play();
+    this.maniacalLaughter.play();
+    this.scene.start("GameOverScene", { score: this.score, crrLevel: this.scene.key });
   }
 }
 
 class Level1Scene extends BaseLevel {
   constructor() {
-    super("Level1Scene", "beach", "grass-platform", "Level2Scene", 120);
+    super("Level1Scene", "beach", "grass-platform", "Level2Scene", 360); // 3 enemigos
   }
 }
 
 class Level2Scene extends BaseLevel {
   constructor() {
-    super("Level2Scene", "night-forest", "mud-platform", "Level3Scene", 240);
+    super("Level2Scene", "night-forest", "mud-platform", "Level3Scene", 480); // 4 enemigos
   }
 }
 
 class Level3Scene extends BaseLevel {
   constructor() {
-    super("Level3Scene", "desert", "sand-platform", "Level4Scene", 360);
+    super("Level3Scene", "desert", "sand-platform", "Level4Scene", 600); // 5 enemigos
   }
 }
 
 class Level4Scene extends BaseLevel {
   constructor() {
-    super("Level4Scene", "cold-night", "ice-platform", "Level5Scene", 480);
+    super("Level4Scene", "cold-night", "ice-platform", "Level5Scene", 720); // 6 enemigos
   }
 }
 
 class Level5Scene extends BaseLevel {
   constructor() {
-    super("Level5Scene", "countryside", "lava-platform", null, 600);
+    super("Level5Scene", "countryside", "lava-platform", null, 840); // 7 enemigos
   }
 }
 
@@ -215,6 +234,7 @@ class LevelCompleteScene extends Phaser.Scene {
 
     const btn = this.add.image(450, 400, "nextLevelBtn").setInteractive({ useHandCursor: true });
     btn.on("pointerdown", () => {
+      this.sound.stopAll();
       this.scene.start(data.nextScene || "Level1Scene");
     });
   }
@@ -231,6 +251,7 @@ class EndGameScene extends Phaser.Scene {
 
     const btn = this.add.image(450, 400, "playAgainBtn").setInteractive({ useHandCursor: true });
     btn.on("pointerdown", () => {
+      this.sound.stopAll();
       this.scene.start("Level1Scene");
     });
   }
@@ -247,7 +268,8 @@ class GameOverScene extends Phaser.Scene {
       .setOrigin(0.5);
     const btn = this.add.image(450, 400, "restartBtn").setInteractive({ useHandCursor: true });
     btn.on("pointerdown", () => {
-      this.scene.start("Level1Scene");
+      this.sound.stopAll();
+      this.scene.start(data.crrLevel);
     });
   }
 }
