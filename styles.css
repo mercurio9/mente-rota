@@ -104,8 +104,14 @@ nav a {
   justify-content: center;
   flex-direction: column;
   gap: 62px;
-  height: calc(100% - 127px);
+  min-height: 100vh;
+  padding: 107px 30px 30px 30px;
   color: white;
+}
+
+.welcome-content img {
+  width: 100%;
+  max-width: 500px;
 }
 
 .title-section {
@@ -117,7 +123,7 @@ nav a {
 }
 
 .welcome-content p {
-  width: 500px;
+  max-width: 500px;
   text-align: center;
 }
 
@@ -130,7 +136,13 @@ nav a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .history-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 .history-info {
@@ -138,6 +150,18 @@ nav a {
   display: grid;
   place-content: center;
   padding: 0 100px;
+}
+
+@media (max-width: 768px) {
+  .history-info {
+    padding: 0 30px;
+  }
+
+  .history-section,
+  .welcome-section,
+  .assets-section {
+    margin-bottom: 50px;
+  }
 }
 
 .history-section img {
@@ -148,8 +172,26 @@ nav a {
 .assets-section {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.assets-container {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .assets-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .assets-container > div {
+    padding: 0 30px;
+  }
 }
 
 .history-section p {
@@ -333,4 +375,49 @@ footer {
   margin-top: 30px;
   font-size: 13px;
   color: #888;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navigation-bar {
+    padding: 20px;
+  }
+
+  /* Ocultar menú por defecto */
+  .navigation-bar nav {
+    display: none;
+    flex-direction: column;
+    background-color: #03080c;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #848484;
+  }
+
+  /* Mostrar cuando está activo */
+  .navigation-bar nav.active {
+    display: flex;
+    gap: 16px;
+  }
+
+  /* Alinear enlaces */
+  .navigation-bar nav a {
+    color: white;
+  }
 }
